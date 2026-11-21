@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "algoradar"
+version = "1.0.0"
+description = "High-performance terminal competitive programming contest radar and calendar workstation"
+readme = "README.md"
+authors = [
+    { name = "AlgoRadar Team", email = "team@algoradar.dev" }
+]
+license = { text = "MIT" }
+keywords = [
+    "competitive-programming",
+    "contests",
+    "radar",
+    "calendar",
+    "codeforces",
+    "leetcode",
+    "atcoder",
+    "codechef",
+    "hackerrank",
+    "terminal",
+    "cli"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+algoradar = "algoradar.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/OmReddyEnduri/AlgoRadar"
+Repository = "https://github.com/OmReddyEnduri/AlgoRadar"
+Issues = "https://github.com/OmReddyEnduri/AlgoRadar/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["algoradar*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I"]
